@@ -1,5 +1,13 @@
 # Elastic Beanstalk Multi Container PHP-FPM + Nginx Demo App
 
+Plan:
+- Automatically build on Travis
+- Automatically deploy to EBS
+- Run in Vagrant on Mac
+- Run in docker-compose on Linux
+- Run in eb local on Linux
+
+
 This demo app shows you how to run a simple PHP application using the [PHP-FPM](https://registry.hub.docker.com/u/library/php/) and [Nginx](https://registry.hub.docker.com/u/library/nginx/) Docker images from the official Docker library.
 
 ## Run the App
