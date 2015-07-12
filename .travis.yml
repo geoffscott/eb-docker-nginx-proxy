@@ -9,8 +9,21 @@ deploy:
     secure: kMvgexm0f97lO84acAotXTTAlOrf+y5Y8XUVVy5C/+q/Nu+fo8s2WQQ3IYy4zjECwFbrAm1m+VIj2rL4j9Rrsde3HJmynxLjdzNBZLWHQ5msAr5+m/6LMuQMGgVcjnuRagGdrGrIOucL5HH2CM+D4N2EVgDfCewtxJj+KurHjv0QDgdNenkPsK5ysz5NYTuNJuqW2BgC4nC0xQ+4OVz4hlquW8WkOafgHusM24IU1dzs0Gc0j9cUvRE/9ozY1z4hs0Pad+nQ0OP1C3WUGf6WRUsMNfY/cWEr/A1J/ugiJIE5niElGN4dxYB+gO/H+NNKZKP68bRq4Gszo1qt9obU89KOSuzyyTaWX6WIG6JC54vdB7qs5XBKzAmUmHWYVAfKpv1QSFlFm9yvkwPwDLRgsPshzdvnGsQZ5M/ucpNbn2bCuExAUVOZL5EYE5ErgKo8RkI+DJ+/qkzVFPtJvh8wlTnqz1NQlr4Fr14PxmwY3BEo884YViPj4oCqEjCs4ePb9ahSpF91OOgxksrn5Q8pMQy/Ep+RO9DctKUedOuSbVcvIalj7RVG223GYEAWiKQV4ldSDE+6pIeNc706SfMBTVEeJiA2ZmXgP92lNNLvZ0VDi0X2KjW636if/+0vv+heKxqpxHe5D/wXAd6H4Nc3KAOqtgO0ZNpqzTuqej6MDgo=
   region: us-east-1
   app: eb-docker-nginx-proxy
-  env: ebDockerNginxProxy-env
-  bucket_name: eb-docker-nginx-proxy-deploy
+  env: ebDockerNginxProxy-staging
+  bucket_name: eb-docker-nginx-proxy-deploy-staging
+  skip_cleanup: true
+  on:
+    repo: geoffscott/eb-docker-nginx-proxy
+    branch: staging
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAIKI74LODOS5L3GRQ
+  secret_access_key:
+    secure: kMvgexm0f97lO84acAotXTTAlOrf+y5Y8XUVVy5C/+q/Nu+fo8s2WQQ3IYy4zjECwFbrAm1m+VIj2rL4j9Rrsde3HJmynxLjdzNBZLWHQ5msAr5+m/6LMuQMGgVcjnuRagGdrGrIOucL5HH2CM+D4N2EVgDfCewtxJj+KurHjv0QDgdNenkPsK5ysz5NYTuNJuqW2BgC4nC0xQ+4OVz4hlquW8WkOafgHusM24IU1dzs0Gc0j9cUvRE/9ozY1z4hs0Pad+nQ0OP1C3WUGf6WRUsMNfY/cWEr/A1J/ugiJIE5niElGN4dxYB+gO/H+NNKZKP68bRq4Gszo1qt9obU89KOSuzyyTaWX6WIG6JC54vdB7qs5XBKzAmUmHWYVAfKpv1QSFlFm9yvkwPwDLRgsPshzdvnGsQZ5M/ucpNbn2bCuExAUVOZL5EYE5ErgKo8RkI+DJ+/qkzVFPtJvh8wlTnqz1NQlr4Fr14PxmwY3BEo884YViPj4oCqEjCs4ePb9ahSpF91OOgxksrn5Q8pMQy/Ep+RO9DctKUedOuSbVcvIalj7RVG223GYEAWiKQV4ldSDE+6pIeNc706SfMBTVEeJiA2ZmXgP92lNNLvZ0VDi0X2KjW636if/+0vv+heKxqpxHe5D/wXAd6H4Nc3KAOqtgO0ZNpqzTuqej6MDgo=
+  region: us-east-1
+  app: eb-docker-nginx-proxy
+  env: ebDockerNginxProxy-production
+  bucket_name: eb-docker-nginx-proxy-deploy-production
   skip_cleanup: true
   on:
     repo: geoffscott/eb-docker-nginx-proxy
