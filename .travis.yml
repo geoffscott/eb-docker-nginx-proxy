@@ -2,6 +2,11 @@ language: php
 php:
 - hhvm
 script: phpunit --version
+# whitelist
+branches:
+  only:
+    - master
+    - staging
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAIKI74LODOS5L3GRQ
